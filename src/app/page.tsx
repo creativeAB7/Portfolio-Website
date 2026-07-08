@@ -1,10 +1,13 @@
 import { Section } from "@/components/layout/section";
 import { About } from "@/components/sections/about";
+import { Certifications } from "@/components/sections/certifications";
 import { Experience } from "@/components/sections/experience";
+import { Faq } from "@/components/sections/faq";
 import { Hero } from "@/components/sections/hero";
 import { Projects } from "@/components/sections/projects";
 import { Services } from "@/components/sections/services";
 import { Technologies } from "@/components/sections/technologies";
+import { Testimonials } from "@/components/sections/testimonials";
 
 /** Placeholder for the contact section, built in a later milestone. */
 function Placeholder({ label }: { label: string }) {
@@ -24,13 +27,15 @@ export default function HomePage() {
       <Experience />
       <Technologies />
       <Projects />
+      <Testimonials />
+      <Certifications />
+      <Faq />
 
       <Section
         id="contact"
         eyebrow="Contact"
         title="Let's work together"
         description="Have a project in mind? I'd love to hear about it."
-        className="bg-muted/30"
       >
         <Placeholder label="Contact form" />
       </Section>

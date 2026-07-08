@@ -237,11 +237,16 @@ export const projectLinkSchema = z.object({
 });
 export type ProjectLink = z.infer<typeof projectLinkSchema>;
 
-export const projectImageSchema = z.object({
+/** Shared image reference: a path/URL plus required alt text. */
+export const imageSchema = z.object({
   src: z.string().min(1),
   alt: z.string().min(1),
 });
-export type ProjectImage = z.infer<typeof projectImageSchema>;
+export type ImageRef = z.infer<typeof imageSchema>;
+
+/** Backwards-compatible alias used for project cover images. */
+export const projectImageSchema = imageSchema;
+export type ProjectImage = ImageRef;
 
 const projectSlug = z
   .string()
@@ -284,8 +289,14 @@ export type ProjectsSection = z.infer<typeof projectsSectionSchema>;
 export const certificationItemSchema = z.object({
   name: z.string().min(1),
   issuer: z.string().min(1),
-  date: z.string().min(1),
+  issueDate: z.string().min(1),
+  expiryDate: z.string().min(1).optional(),
+  credentialId: z.string().min(1).optional(),
   credentialUrl: z.url().optional(),
+  skills: z.array(z.string().min(1)).optional(),
+  category: z.string().min(1).optional(),
+  /** Issuer badge / logo image. */
+  badge: imageSchema.optional(),
 });
 export const certificationsSchema = z.object({
   ...sectionMetaShape,
@@ -301,6 +312,13 @@ export const testimonialItemSchema = z.object({
   author: z.string().min(1),
   role: z.string().min(1).optional(),
   company: z.string().min(1).optional(),
+  avatar: imageSchema.optional(),
+  date: z.string().min(1).optional(),
+  /** Slug of a related project this testimonial refers to. */
+  project: projectSlug.optional(),
+  skills: z.array(z.string().min(1)).optional(),
+  rating: z.number().int().min(1).max(5).optional(),
+  verificationUrl: z.url().optional(),
 });
 export const testimonialsSchema = z.object({
   ...sectionMetaShape,
@@ -314,6 +332,8 @@ export type TestimonialsContent = z.infer<typeof testimonialsSchema>;
 export const faqItemSchema = z.object({
   question: z.string().min(1),
   answer: z.string().min(1),
+  /** Optional grouping label for future categorised FAQs. */
+  category: z.string().min(1).optional(),
 });
 export const faqSchema = z.object({
   ...sectionMetaShape,
