@@ -1,0 +1,14 @@
+# Build output & artifacts
+.next/
+out/
+build/
+coverage/
+playwright-report/
+test-results/
+
+# Dependencies & lockfiles
+node_modules/
+package-lock.json
+
+# Generated
+next-env.d.ts
