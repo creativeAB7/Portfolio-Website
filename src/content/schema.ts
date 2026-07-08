@@ -99,33 +99,185 @@ export type ExperienceRole = z.infer<typeof experienceRoleSchema>;
 export type SkillGroup = z.infer<typeof skillGroupSchema>;
 export type ExperienceContent = z.infer<typeof experienceSchema>;
 
+/* ------------------------------------------------- Case-study blocks - */
+
+/**
+ * A case study's body is an ordered list of typed "blocks". New section types
+ * are added by adding a variant to `caseStudyBlockSchema` and a matching
+ * renderer in the UI block registry — the case-study template, routes, and
+ * layouts never need to change. This is what lets a project of any size or
+ * shape be expressed by composing blocks in any order.
+ */
+
+const blockTitle = z.string().min(1).optional();
+
+/** Titled paragraphs — Overview, Background, Problem, Process, Lessons, etc. */
+export const proseBlockSchema = z.object({
+  type: z.literal("prose"),
+  title: blockTitle,
+  body: z.array(z.string().min(1)).min(1),
+});
+
+/** A simple list — Objectives, responsibilities, etc. */
+export const listBlockSchema = z.object({
+  type: z.literal("list"),
+  title: blockTitle,
+  style: z.enum(["bullet", "check", "number"]).optional(),
+  items: z.array(z.string().min(1)).min(1),
+});
+
+/** Titled items with optional descriptions — Key Features. */
+export const featureListBlockSchema = z.object({
+  type: z.literal("featureList"),
+  title: blockTitle,
+  items: z
+    .array(
+      z.object({
+        title: z.string().min(1),
+        description: z.string().min(1).optional(),
+      }),
+    )
+    .min(1),
+});
+
+/** Grouped technologies — reuses the shared technology-group shape. */
+export const techStackBlockSchema = z.object({
+  type: z.literal("techStack"),
+  title: blockTitle,
+  groups: z.array(technologyGroupSchema).min(1),
+});
+
+/** Architecture & technical decisions — decision, rationale, alternatives. */
+export const decisionsBlockSchema = z.object({
+  type: z.literal("decisions"),
+  title: blockTitle,
+  items: z
+    .array(
+      z.object({
+        decision: z.string().min(1),
+        rationale: z.string().min(1),
+        alternatives: z.string().min(1).optional(),
+      }),
+    )
+    .min(1),
+});
+
+/** Outcome metrics — Results & business outcome. */
+export const metricsBlockSchema = z.object({
+  type: z.literal("metrics"),
+  title: blockTitle,
+  items: z
+    .array(
+      z.object({
+        value: z.string().min(1),
+        label: z.string().min(1),
+      }),
+    )
+    .min(1),
+});
+
+export const galleryImageSchema = z.object({
+  src: z.string().min(1),
+  alt: z.string().min(1),
+  caption: z.string().min(1).optional(),
+});
+/** Screenshots / media gallery. */
+export const galleryBlockSchema = z.object({
+  type: z.literal("gallery"),
+  title: blockTitle,
+  items: z.array(galleryImageSchema).min(1),
+});
+
+/** A pulled-out quote or testimonial within a case study. */
+export const quoteBlockSchema = z.object({
+  type: z.literal("quote"),
+  quote: z.string().min(1),
+  attribution: z.string().min(1).optional(),
+});
+
+export const caseStudyBlockSchema = z.discriminatedUnion("type", [
+  proseBlockSchema,
+  listBlockSchema,
+  featureListBlockSchema,
+  techStackBlockSchema,
+  decisionsBlockSchema,
+  metricsBlockSchema,
+  galleryBlockSchema,
+  quoteBlockSchema,
+]);
+export type CaseStudyBlock = z.infer<typeof caseStudyBlockSchema>;
+export type CaseStudyBlockType = CaseStudyBlock["type"];
+export type GalleryImage = z.infer<typeof galleryImageSchema>;
+
 /* --------------------------------------------------------------- Projects - */
+
+/** Broad on purpose so any future work fits without new categories. */
+export const projectCategories = [
+  "personal",
+  "freelance",
+  "commercial",
+  "open-source",
+  "experiment",
+  "internal-tool",
+  "proof-of-concept",
+] as const;
+export type ProjectCategory = (typeof projectCategories)[number];
+
+export const projectStatuses = [
+  "completed",
+  "in-progress",
+  "archived",
+] as const;
+export type ProjectStatus = (typeof projectStatuses)[number];
 
 export const projectLinkSchema = z.object({
   label: z.string().min(1),
   href: z.url(),
+  type: z.enum(["repo", "demo", "external"]).optional(),
 });
-export const projectItemSchema = z.object({
-  slug: z
-    .string()
-    .regex(/^[a-z0-9-]+$/, "slug must be kebab-case (a-z, 0-9, hyphens)"),
-  title: z.string().min(1),
-  summary: z.string().min(1),
-  /** Case-study body: the problem, the approach taken, and the outcome. */
-  problem: z.string().min(1),
-  approach: z.string().min(1),
-  outcome: z.string().min(1),
-  tags: z.array(z.string().min(1)),
-  links: z.array(projectLinkSchema),
-  featured: z.boolean(),
-});
-export const projectsSchema = z.object({
-  ...sectionMetaShape,
-  items: z.array(projectItemSchema),
-});
-export type ProjectItem = z.infer<typeof projectItemSchema>;
 export type ProjectLink = z.infer<typeof projectLinkSchema>;
-export type ProjectsContent = z.infer<typeof projectsSchema>;
+
+export const projectImageSchema = z.object({
+  src: z.string().min(1),
+  alt: z.string().min(1),
+});
+export type ProjectImage = z.infer<typeof projectImageSchema>;
+
+const projectSlug = z
+  .string()
+  .regex(/^[a-z0-9-]+$/, "slug must be kebab-case (a-z, 0-9, hyphens)");
+
+/**
+ * A single project / case study: structural metadata (used by the grid,
+ * header, and SEO) plus an ordered `body` of case-study blocks.
+ */
+export const projectSchema = z.object({
+  slug: projectSlug,
+  title: z.string().min(1),
+  /** One-line summary used on cards and as the meta description. */
+  summary: z.string().min(1),
+  category: z.enum(projectCategories),
+  status: z.enum(projectStatuses).optional(),
+  role: z.string().min(1).optional(),
+  timeframe: z.string().min(1).optional(),
+  client: z.string().min(1).optional(),
+  /** Tech/skill tags shown on cards and used for future filtering. */
+  tags: z.array(z.string().min(1)),
+  cover: projectImageSchema.optional(),
+  featured: z.boolean(),
+  /** Optional manual sort weight (lower sorts earlier). */
+  order: z.number().int().optional(),
+  links: z.array(projectLinkSchema),
+  /** Slugs of related projects (resolved at read time; missing ones ignored). */
+  related: z.array(projectSlug),
+  /** Ordered case-study sections. */
+  body: z.array(caseStudyBlockSchema),
+});
+export type Project = z.infer<typeof projectSchema>;
+
+/** Heading for the Projects section (homepage + /projects index). */
+export const projectsSectionSchema = z.object({ ...sectionMetaShape });
+export type ProjectsSection = z.infer<typeof projectsSectionSchema>;
 
 /* --------------------------------------------------------- Certifications - */
 

@@ -2,11 +2,11 @@ import { Section } from "@/components/layout/section";
 import { About } from "@/components/sections/about";
 import { Experience } from "@/components/sections/experience";
 import { Hero } from "@/components/sections/hero";
+import { Projects } from "@/components/sections/projects";
 import { Services } from "@/components/sections/services";
 import { Technologies } from "@/components/sections/technologies";
-import { projects } from "@/content";
 
-/** Placeholder for sections still to be built (Projects → M3, Contact → M5). */
+/** Placeholder for the contact section, built in a later milestone. */
 function Placeholder({ label }: { label: string }) {
   return (
     <div className="flex min-h-40 items-center justify-center rounded-xl border border-dashed border-border text-sm text-muted-foreground">
@@ -23,15 +23,7 @@ export default function HomePage() {
       <Services />
       <Experience />
       <Technologies />
-
-      <Section
-        id="projects"
-        eyebrow={projects.eyebrow}
-        title={projects.title}
-        description={projects.description}
-      >
-        <Placeholder label="Case studies" />
-      </Section>
+      <Projects />
 
       <Section
         id="contact"

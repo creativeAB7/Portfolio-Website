@@ -6,6 +6,7 @@ import {
   experience,
   faq,
   projects,
+  projectsSection,
   services,
   technologies,
   testimonials,
@@ -45,12 +46,16 @@ describe("content", () => {
     expect(faq.items.length).toBeGreaterThan(0);
   });
 
+  test("projects is a validated collection", () => {
+    expect(Array.isArray(projects)).toBe(true);
+  });
+
   test("every section defines a heading", () => {
     const sections = [
       services,
       technologies,
       experience,
-      projects,
+      projectsSection,
       certifications,
       testimonials,
       faq,

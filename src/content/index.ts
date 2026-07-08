@@ -9,7 +9,14 @@ export { about } from "./about";
 export { services } from "./services";
 export { technologies } from "./technologies";
 export { experience } from "./experience";
-export { projects } from "./projects";
+export {
+  projects,
+  projectsSection,
+  getAllProjects,
+  getFeaturedProjects,
+  getProjectBySlug,
+  getRelatedProjects,
+} from "./projects";
 export { certifications } from "./certifications";
 export { testimonials } from "./testimonials";
 export { faq } from "./faq";
