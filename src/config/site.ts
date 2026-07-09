@@ -31,6 +31,7 @@ export const siteConfig = {
     github: "https://github.com/your-handle", // TODO: real GitHub URL
     linkedin: "https://www.linkedin.com/in/your-handle", // TODO: real LinkedIn URL
     email: "hello@example.com", // TODO: real contact email
+    booking: "https://cal.com/your-handle", // TODO: real booking link (Cal.com / Calendly)
   },
 } as const;
 

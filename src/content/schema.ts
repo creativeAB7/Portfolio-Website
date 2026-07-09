@@ -41,6 +41,31 @@ export type About = z.infer<typeof aboutSchema>;
 
 /* ------------------------------------------------------------------- Hero - */
 
+/** Semantic icon keys for hero proof points; mapped to components in the UI. */
+export const heroProofIconKeys = [
+  "experience",
+  "testing",
+  "quality",
+  "performance",
+  "stack",
+  "delivery",
+  "outcome",
+] as const;
+export type HeroProofIcon = (typeof heroProofIconKeys)[number];
+
+/**
+ * A single credibility proof point. Today these are qualitative statements
+ * (label + icon); as real metrics land, add `value` (e.g. "70%") and
+ * `description` to turn them into concrete business outcomes — no UI changes.
+ */
+export const heroProofPointSchema = z.object({
+  icon: z.enum(heroProofIconKeys),
+  label: z.string().min(1),
+  value: z.string().min(1).optional(),
+  description: z.string().min(1).optional(),
+});
+export type HeroProofPoint = z.infer<typeof heroProofPointSchema>;
+
 export const heroSchema = z.object({
   availability: z.string().min(1),
   headline: z.string().min(1),
@@ -49,12 +74,8 @@ export const heroSchema = z.object({
   subheadline: z.string().min(1),
   /** Small monospace label on the credibility panel. */
   panelLabel: z.string().min(1),
-  /** Trust points shown as a checklist in the credibility panel. */
-  proofPoints: z.array(z.string().min(1)).min(1),
-  /** Compact stat chips; evolve these as real metrics become available. */
-  stats: z
-    .array(z.object({ value: z.string().min(1), label: z.string().min(1) }))
-    .min(1),
+  /** Trust points shown in the credibility panel. */
+  proofPoints: z.array(heroProofPointSchema).min(1),
 });
 export type Hero = z.infer<typeof heroSchema>;
 

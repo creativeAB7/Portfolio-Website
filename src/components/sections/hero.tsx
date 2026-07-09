@@ -1,17 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion, useReducedMotion, type Variants } from "motion/react";
 
 import { Container } from "@/components/layout/container";
+import { ProofPointIcon } from "@/components/sections/proof-point-icon";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
 import { hero } from "@/content";
 
 /**
  * Landing hero — a balanced two-column layout: reliability-led messaging on the
- * left, a "credibility panel" on the right that builds trust above the fold
- * without needing a photo. All copy and proof points come from `@/content/hero`.
+ * left, a content-driven "credibility panel" on the right that builds trust
+ * above the fold without needing a photo. All copy and proof points come from
+ * `@/content/hero`; the panel evolves as real metrics are added to that data.
  *
  * This is the only place we opt into JS-driven motion (a subtle staggered
  * fade-up); it collapses to no movement when the user prefers reduced motion.
@@ -85,10 +88,14 @@ export function Hero() {
               className="mt-8 flex flex-col gap-3 sm:flex-row"
             >
               <Button asChild size="lg" className="h-11 px-6 text-base">
-                <Link href="#contact">
-                  Get in touch
+                <a
+                  href={siteConfig.links.booking}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book a call
                   <ArrowRight className="size-4" />
-                </Link>
+                </a>
               </Button>
               <Button
                 asChild
@@ -115,32 +122,30 @@ export function Hero() {
                 </span>
               </div>
 
-              <ul className="mt-5 space-y-3">
+              <ul className="mt-5 space-y-4">
                 {hero.proofPoints.map((point) => (
-                  <li key={point} className="flex items-start gap-3 text-sm">
-                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand">
-                      <Check className="size-3.5" aria-hidden />
+                  <li key={point.label} className="flex items-start gap-3">
+                    <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand/10 text-brand">
+                      <ProofPointIcon name={point.icon} className="size-4" />
                     </span>
-                    <span>{point}</span>
+                    <div className="text-sm">
+                      <p className="font-medium">
+                        {point.value && (
+                          <span className="font-semibold text-brand">
+                            {point.value}{" "}
+                          </span>
+                        )}
+                        {point.label}
+                      </p>
+                      {point.description && (
+                        <p className="mt-0.5 text-xs text-muted-foreground">
+                          {point.description}
+                        </p>
+                      )}
+                    </div>
                   </li>
                 ))}
               </ul>
-
-              <dl className="mt-6 grid grid-cols-3 gap-3 border-t pt-5">
-                {hero.stats.map((stat) => (
-                  <div key={stat.label}>
-                    <dt className="sr-only">{stat.label}</dt>
-                    <dd>
-                      <span className="block font-heading text-lg font-bold text-brand">
-                        {stat.value}
-                      </span>
-                      <span className="mt-0.5 block text-xs text-muted-foreground">
-                        {stat.label}
-                      </span>
-                    </dd>
-                  </div>
-                ))}
-              </dl>
             </div>
           </motion.div>
         </motion.div>

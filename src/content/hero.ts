@@ -7,16 +7,26 @@ const data: Hero = {
   subheadline:
     "I'm Akeem Baker — a QA-led software engineer. I design, build, and rigorously test web applications, so you can ship faster, break less, and release with confidence.",
   panelLabel: "quality-first delivery",
+  // Qualitative today; add `value`/`description` to make these concrete business
+  // outcomes as real metrics become available (e.g. value: "70%").
   proofPoints: [
-    "10+ years in QA & test automation",
-    "Testing-first delivery, integrated into CI",
-    "Accessible, performant & SEO-ready",
-    "Full-stack: Next.js, React & TypeScript",
-  ],
-  stats: [
-    { value: "10+ yrs", label: "QA & automation" },
-    { value: "Full-stack", label: "build & test" },
-    { value: "CI-first", label: "every release" },
+    {
+      icon: "experience",
+      value: "10+ years",
+      label: "in QA & test automation",
+    },
+    {
+      icon: "testing",
+      label: "Testing-first delivery, integrated into CI",
+    },
+    {
+      icon: "quality",
+      label: "Accessible, performant & SEO-ready",
+    },
+    {
+      icon: "stack",
+      label: "Full-stack: Next.js, React & TypeScript",
+    },
   ],
 };
 
