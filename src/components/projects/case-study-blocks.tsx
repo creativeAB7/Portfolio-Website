@@ -2,7 +2,7 @@ import type { ComponentType, ReactNode } from "react";
 import Image from "next/image";
 import { Check } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
+import { TechnologyGroups } from "@/components/technology-groups";
 import type { CaseStudyBlock, CaseStudyBlockType } from "@/content";
 
 /** Narrow the block union to a single variant by its `type`. */
@@ -94,27 +94,7 @@ function TechStackBlock({ block }: { block: BlockOf<"techStack"> }) {
   return (
     <section>
       {block.title && <BlockHeading>{block.title}</BlockHeading>}
-      <div className="grid gap-6 sm:grid-cols-2">
-        {block.groups.map((group) => (
-          <div key={group.category}>
-            <h3 className="mb-2 text-sm font-semibold tracking-wider text-muted-foreground uppercase">
-              {group.category}
-            </h3>
-            <ul className="flex flex-wrap gap-2">
-              {group.items.map((item) => (
-                <li key={item}>
-                  <Badge
-                    variant="secondary"
-                    className="h-7 px-3 text-sm font-medium"
-                  >
-                    {item}
-                  </Badge>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+      <TechnologyGroups groups={block.groups} />
     </section>
   );
 }

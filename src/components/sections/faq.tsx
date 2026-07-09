@@ -1,4 +1,5 @@
 import { Section } from "@/components/layout/section";
+import { JsonLd } from "@/components/seo/json-ld";
 import {
   Accordion,
   AccordionContent,
@@ -6,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { faq } from "@/content";
+import { faqStructuredData } from "@/lib/structured-data";
 
 export function Faq() {
   return (
@@ -16,6 +18,7 @@ export function Faq() {
       description={faq.description}
       className="bg-muted/30"
     >
+      <JsonLd data={faqStructuredData(faq.items)} />
       <div className="mx-auto max-w-3xl">
         <Accordion type="single" collapsible className="w-full">
           {faq.items.map((item, index) => (

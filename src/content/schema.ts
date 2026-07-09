@@ -244,10 +244,6 @@ export const imageSchema = z.object({
 });
 export type ImageRef = z.infer<typeof imageSchema>;
 
-/** Backwards-compatible alias used for project cover images. */
-export const projectImageSchema = imageSchema;
-export type ProjectImage = ImageRef;
-
 const projectSlug = z
   .string()
   .regex(/^[a-z0-9-]+$/, "slug must be kebab-case (a-z, 0-9, hyphens)");
@@ -268,7 +264,7 @@ export const projectSchema = z.object({
   client: z.string().min(1).optional(),
   /** Tech/skill tags shown on cards and used for future filtering. */
   tags: z.array(z.string().min(1)),
-  cover: projectImageSchema.optional(),
+  cover: imageSchema.optional(),
   featured: z.boolean(),
   /** Optional manual sort weight (lower sorts earlier). */
   order: z.number().int().optional(),

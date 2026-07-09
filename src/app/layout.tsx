@@ -5,8 +5,10 @@ import { Analytics } from "@/components/analytics";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SkipLink } from "@/components/layout/skip-link";
+import { JsonLd } from "@/components/seo/json-ld";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
+import { personStructuredData } from "@/lib/structured-data";
 
 import "./globals.css";
 
@@ -32,6 +34,7 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
+  alternates: { canonical: "/" },
   keywords: [
     "QA Automation",
     "Test Automation",
@@ -88,12 +91,13 @@ export default function RootLayout({
         >
           <SkipLink />
           <SiteHeader />
-          <main id="main" className="flex-1">
+          <main id="main" tabIndex={-1} className="flex-1 outline-none">
             {children}
           </main>
           <SiteFooter />
         </ThemeProvider>
         <Analytics />
+        <JsonLd data={personStructuredData()} />
       </body>
     </html>
   );
