@@ -5,7 +5,7 @@ test.describe("Contact section", () => {
     await page.goto("/");
     const contact = page.locator("#contact");
     await expect(
-      contact.getByRole("heading", { name: /let's work together/i }),
+      contact.getByRole("heading", { name: /reduce the risk/i }),
     ).toBeVisible();
     await expect(contact.getByLabel("Name", { exact: true })).toBeVisible();
     await expect(contact.getByLabel("Message", { exact: true })).toBeVisible();

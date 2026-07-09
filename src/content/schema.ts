@@ -94,8 +94,12 @@ export type ServiceIconKey = (typeof serviceIconKeys)[number];
 export const serviceItemSchema = z.object({
   icon: z.enum(serviceIconKeys),
   title: z.string().min(1),
-  description: z.string().min(1),
-  features: z.array(z.string().min(1)).min(1),
+  /** The client's problem/pain this service addresses. */
+  problem: z.string().min(1),
+  /** How I solve it. */
+  solution: z.string().min(1),
+  /** The business outcome the client can expect. */
+  outcome: z.string().min(1),
 });
 export const servicesSchema = z.object({
   ...sectionMetaShape,

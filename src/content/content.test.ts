@@ -23,10 +23,12 @@ describe("content", () => {
     expect(about.highlights.length).toBeGreaterThan(0);
   });
 
-  test("services have features and resolvable icon keys", () => {
+  test("services are framed as problem/solution/outcome", () => {
     expect(services.items.length).toBeGreaterThan(0);
     for (const service of services.items) {
-      expect(service.features.length).toBeGreaterThan(0);
+      expect(service.problem.length).toBeGreaterThan(0);
+      expect(service.solution.length).toBeGreaterThan(0);
+      expect(service.outcome.length).toBeGreaterThan(0);
     }
   });
 
