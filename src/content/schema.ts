@@ -117,27 +117,18 @@ export const technologiesSchema = z.object({
 export type TechnologyGroup = z.infer<typeof technologyGroupSchema>;
 export type TechnologiesContent = z.infer<typeof technologiesSchema>;
 
-/* ------------------------------------------------- Experience & Skills - */
+/* ---------------------------------------------------------- How I work - */
 
-export const experienceRoleSchema = z.object({
-  role: z.string().min(1),
-  company: z.string().min(1),
-  period: z.string().min(1),
-  summary: z.string().min(1).optional(),
-  highlights: z.array(z.string().min(1)).min(1),
+export const processPhaseSchema = z.object({
+  title: z.string().min(1),
+  description: z.string().min(1),
 });
-export const skillGroupSchema = z.object({
-  group: z.string().min(1),
-  items: z.array(z.string().min(1)).min(1),
-});
-export const experienceSchema = z.object({
+export const processSchema = z.object({
   ...sectionMetaShape,
-  roles: z.array(experienceRoleSchema).min(1),
-  skills: z.array(skillGroupSchema).min(1),
+  phases: z.array(processPhaseSchema).min(1),
 });
-export type ExperienceRole = z.infer<typeof experienceRoleSchema>;
-export type SkillGroup = z.infer<typeof skillGroupSchema>;
-export type ExperienceContent = z.infer<typeof experienceSchema>;
+export type ProcessPhase = z.infer<typeof processPhaseSchema>;
+export type ProcessContent = z.infer<typeof processSchema>;
 
 /* ------------------------------------------------- Case-study blocks - */
 

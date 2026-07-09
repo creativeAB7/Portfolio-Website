@@ -3,13 +3,13 @@ import { describe, expect, test } from "vitest";
 import {
   about,
   certifications,
-  experience,
   faq,
   projects,
   projectsSection,
   services,
   technologies,
   testimonials,
+  workProcess,
 } from "@/content";
 
 /**
@@ -37,9 +37,8 @@ describe("content", () => {
     }
   });
 
-  test("experience exposes roles and skill groups", () => {
-    expect(experience.roles.length).toBeGreaterThan(0);
-    expect(experience.skills.length).toBeGreaterThan(0);
+  test("the process has phases", () => {
+    expect(workProcess.phases.length).toBeGreaterThan(0);
   });
 
   test("faq has question/answer pairs", () => {
@@ -54,7 +53,7 @@ describe("content", () => {
     const sections = [
       services,
       technologies,
-      experience,
+      workProcess,
       projectsSection,
       certifications,
       testimonials,

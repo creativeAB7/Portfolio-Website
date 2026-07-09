@@ -40,8 +40,8 @@ export type SiteConfig = typeof siteConfig;
 /** Primary in-page navigation (anchors to homepage sections). */
 export const mainNav: NavItem[] = [
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Experience", href: "#experience" },
   { label: "Work", href: "#projects" },
+  { label: "Services", href: "#services" },
+  { label: "Process", href: "#process" },
   { label: "Contact", href: "#contact" },
 ];

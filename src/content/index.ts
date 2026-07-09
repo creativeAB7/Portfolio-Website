@@ -9,7 +9,7 @@ export { hero } from "./hero";
 export { about } from "./about";
 export { services } from "./services";
 export { technologies } from "./technologies";
-export { experience } from "./experience";
+export { workProcess } from "./process";
 export {
   projects,
   projectsSection,

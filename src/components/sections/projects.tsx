@@ -26,6 +26,7 @@ export function Projects() {
       eyebrow={projectsSection.eyebrow}
       title={projectsSection.title}
       description={projectsSection.description}
+      className="bg-muted/30"
     >
       <ProjectGrid projects={display} />
 

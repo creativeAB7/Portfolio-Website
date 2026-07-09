@@ -16,7 +16,6 @@ export function Faq() {
       eyebrow={faq.eyebrow}
       title={faq.title}
       description={faq.description}
-      className="bg-muted/30"
     >
       <JsonLd data={faqStructuredData(faq.items)} />
       <div className="mx-auto max-w-3xl">
