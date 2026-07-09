@@ -16,9 +16,19 @@ const data: Project = {
     "SEO",
     "Tailwind CSS",
   ],
+  cover: {
+    src: "/projects/portfolio-website/home-light.png",
+    alt: "The homepage hero of this website",
+  },
   featured: true,
   order: 1,
-  links: [],
+  links: [
+    {
+      label: "View source",
+      href: "https://github.com/creativeAB7/Portfolio-Website",
+      type: "repo",
+    },
+  ],
   related: [],
   body: [
     {
@@ -105,6 +115,24 @@ const data: Project = {
             "GitHub Actions",
             "Vercel",
           ],
+        },
+      ],
+    },
+    {
+      type: "gallery",
+      title: "A look under the hood",
+      items: [
+        {
+          src: "/projects/portfolio-website/architecture.png",
+          alt: "Architecture diagram: content is typed and validated, rendered by React Server Components, built by Next.js, and delivered via Vercel's CDN, tested at every step.",
+          caption:
+            "How content flows from typed, validated data to a fast, static site — tested and accessible at every step.",
+        },
+        {
+          src: "/projects/portfolio-website/home-dark.png",
+          alt: "The website's homepage in dark mode",
+          caption:
+            "The same site in dark mode — theming built in from the start.",
         },
       ],
     },

@@ -7,7 +7,6 @@ import { motion, useReducedMotion, type Variants } from "motion/react";
 import { Container } from "@/components/layout/container";
 import { ProofPointIcon } from "@/components/sections/proof-point-icon";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
 import { hero } from "@/content";
 
 /**
@@ -88,14 +87,10 @@ export function Hero() {
               className="mt-8 flex flex-col gap-3 sm:flex-row"
             >
               <Button asChild size="lg" className="h-11 px-6 text-base">
-                <a
-                  href={siteConfig.links.booking}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Book a call
+                <Link href="#contact">
+                  Get in touch
                   <ArrowRight className="size-4" />
-                </a>
+                </Link>
               </Button>
               <Button
                 asChild

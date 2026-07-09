@@ -27,13 +27,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-1">
             <MainNav className="hidden md:flex" />
             <Button asChild size="sm" className="ml-1 hidden md:inline-flex">
-              <a
-                href={siteConfig.links.booking}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Book a call
-              </a>
+              <Link href="#contact">Get in touch</Link>
             </Button>
             <ThemeToggle />
             <MobileNav />

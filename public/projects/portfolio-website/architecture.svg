@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="1200" height="750" fill="#ffffff"/>
+
+  <text x="80" y="96" font-size="36" font-weight="700" fill="#0a0a0a">How content becomes a fast, reliable site</text>
+  <text x="80" y="136" font-size="21" fill="#71717a">Content is separated from presentation, validated at build, and prerendered to static pages.</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- pipeline -->
+  <g>
+    <!-- box 1 -->
+    <rect x="80" y="250" width="230" height="150" rx="16" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1.5"/>
+    <text x="104" y="292" font-size="18" font-weight="700" fill="#2563eb">01</text>
+    <text x="104" y="330" font-size="26" font-weight="600" fill="#0a0a0a">Content</text>
+    <text x="104" y="360" font-size="16" fill="#71717a">Typed &amp; Zod-validated</text>
+
+    <line x1="310" y1="325" x2="350" y2="325" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- box 2 -->
+    <rect x="350" y="250" width="230" height="150" rx="16" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1.5"/>
+    <text x="374" y="292" font-size="18" font-weight="700" fill="#2563eb">02</text>
+    <text x="374" y="330" font-size="26" font-weight="600" fill="#0a0a0a">Components</text>
+    <text x="374" y="360" font-size="16" fill="#71717a">React Server Components</text>
+
+    <line x1="580" y1="325" x2="620" y2="325" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- box 3 -->
+    <rect x="620" y="250" width="230" height="150" rx="16" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1.5"/>
+    <text x="644" y="292" font-size="18" font-weight="700" fill="#2563eb">03</text>
+    <text x="644" y="330" font-size="26" font-weight="600" fill="#0a0a0a">Build</text>
+    <text x="644" y="360" font-size="16" fill="#71717a">Next.js static + SSG</text>
+
+    <line x1="850" y1="325" x2="890" y2="325" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- box 4 -->
+    <rect x="890" y="250" width="230" height="150" rx="16" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1.5"/>
+    <text x="914" y="292" font-size="18" font-weight="700" fill="#2563eb">04</text>
+    <text x="914" y="330" font-size="26" font-weight="600" fill="#0a0a0a">Delivery</text>
+    <text x="914" y="360" font-size="16" fill="#71717a">Vercel global CDN</text>
+  </g>
+
+  <!-- quality band -->
+  <rect x="80" y="500" width="1040" height="96" rx="16" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <text x="600" y="542" text-anchor="middle" font-size="20" font-weight="600" fill="#1e3a8a">Tested &amp; accessible at every step</text>
+  <text x="600" y="572" text-anchor="middle" font-size="17" fill="#3b82f6">Prettier · ESLint · TypeScript · Vitest · Playwright + axe · GitHub Actions CI</text>
+</svg>

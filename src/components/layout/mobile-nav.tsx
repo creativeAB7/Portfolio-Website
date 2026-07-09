@@ -51,14 +51,9 @@ export function MobileNav() {
         </nav>
         <div className="mt-6 px-2">
           <Button asChild className="w-full">
-            <a
-              href={siteConfig.links.booking}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
-            >
-              Book a call
-            </a>
+            <Link href="#contact" onClick={() => setOpen(false)}>
+              Get in touch
+            </Link>
           </Button>
         </div>
       </SheetContent>
