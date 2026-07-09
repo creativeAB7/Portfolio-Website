@@ -20,4 +20,5 @@ export {
 export { certifications } from "./certifications";
 export { testimonials } from "./testimonials";
 export { faq } from "./faq";
+export { contact } from "./contact";
 export * from "./schema";

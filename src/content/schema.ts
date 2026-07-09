@@ -341,3 +341,14 @@ export const faqSchema = z.object({
 });
 export type FaqItem = z.infer<typeof faqItemSchema>;
 export type FaqContent = z.infer<typeof faqSchema>;
+
+/* ---------------------------------------------------------------- Contact - */
+
+export const contactSchema = z.object({
+  ...sectionMetaShape,
+  /** Short availability / preferred-contact line. */
+  availability: z.string().min(1),
+  /** Expected response-time copy. */
+  responseTime: z.string().min(1),
+});
+export type ContactContent = z.infer<typeof contactSchema>;
