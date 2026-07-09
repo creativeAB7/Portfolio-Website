@@ -4,6 +4,7 @@ import {
   type Project,
   type ProjectsSection,
 } from "../schema";
+import { portfolioWebsite } from "./portfolio-website";
 
 /**
  * Project registry.
@@ -17,7 +18,7 @@ import {
  *   import { acmeQaPlatform } from "./acme-qa-platform";
  *   const entries: Project[] = [acmeQaPlatform];
  */
-const entries: Project[] = [];
+const entries: Project[] = [portfolioWebsite];
 
 /** Heading for the Projects section (homepage + /projects index). */
 export const projectsSection: ProjectsSection = projectsSectionSchema.parse({

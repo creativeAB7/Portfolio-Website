@@ -45,7 +45,7 @@ export default async function Image({
           }}
         />
         <div style={{ fontSize: 28, color: "#a1a1aa" }}>
-          {siteConfig.name} · Case study
+          {`${siteConfig.name} · Case study`}
         </div>
       </div>
 
