@@ -5,6 +5,7 @@
  * Schemas and inferred types are re-exported too, so presentation components
  * can type their props against the content model.
  */
+export { hero } from "./hero";
 export { about } from "./about";
 export { services } from "./services";
 export { technologies } from "./technologies";

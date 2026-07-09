@@ -39,6 +39,25 @@ export const aboutSchema = z.object({
 });
 export type About = z.infer<typeof aboutSchema>;
 
+/* ------------------------------------------------------------------- Hero - */
+
+export const heroSchema = z.object({
+  availability: z.string().min(1),
+  headline: z.string().min(1),
+  /** Highlighted continuation of the headline, rendered in the brand colour. */
+  headlineAccent: z.string().min(1),
+  subheadline: z.string().min(1),
+  /** Small monospace label on the credibility panel. */
+  panelLabel: z.string().min(1),
+  /** Trust points shown as a checklist in the credibility panel. */
+  proofPoints: z.array(z.string().min(1)).min(1),
+  /** Compact stat chips; evolve these as real metrics become available. */
+  stats: z
+    .array(z.object({ value: z.string().min(1), label: z.string().min(1) }))
+    .min(1),
+});
+export type Hero = z.infer<typeof heroSchema>;
+
 /* --------------------------------------------------------------- Services - */
 
 /** Semantic icon keys; the UI maps these to concrete icon components. */
