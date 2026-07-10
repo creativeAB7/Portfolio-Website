@@ -4,6 +4,7 @@ import {
   type Project,
   type ProjectsSection,
 } from "../schema";
+import { landlordApp } from "./landlord-app";
 import { portfolioWebsite } from "./portfolio-website";
 
 /**
@@ -18,7 +19,7 @@ import { portfolioWebsite } from "./portfolio-website";
  *   import { acmeQaPlatform } from "./acme-qa-platform";
  *   const entries: Project[] = [acmeQaPlatform];
  */
-const entries: Project[] = [portfolioWebsite];
+const entries: Project[] = [landlordApp, portfolioWebsite];
 
 /** Heading for the Projects section (homepage + /projects index). */
 export const projectsSection: ProjectsSection = projectsSectionSchema.parse({
