@@ -294,6 +294,11 @@ export const projectSchema = z.object({
   summary: z.string().min(1),
   category: z.enum(projectCategories),
   status: z.enum(projectStatuses).optional(),
+  /**
+   * Human-readable delivery phase shown in the case-study meta (e.g. "Active
+   * development (MVP)"). Complements the coarse `status` badge with specifics.
+   */
+  phase: z.string().min(1).optional(),
   role: z.string().min(1).optional(),
   timeframe: z.string().min(1).optional(),
   client: z.string().min(1).optional(),

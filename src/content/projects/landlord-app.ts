@@ -7,8 +7,9 @@ const data: Project = {
     "A two-sided property management platform for self-managing UK landlords and their tenants — and a look at how I design a product for reliability, security and long-term growth from day one.",
   category: "personal",
   status: "in-progress",
+  phase: "Active development · MVP validation",
   role: "Product, architecture, full-stack engineering & QA (solo)",
-  timeframe: "2026 · in progress",
+  timeframe: "2026 – present",
   tags: [
     "Next.js",
     "TypeScript",
@@ -19,7 +20,7 @@ const data: Project = {
   ],
   cover: {
     src: "/projects/landlord-app/architecture.png",
-    alt: "Architecture of the Landlord App: two roles and a Next.js app backed by Supabase with Row Level Security, and a data model built around the tenancy.",
+    alt: "Architecture of the Landlord App: a two-sided platform where landlords and tenants each get their own experience but share one system, backed by Supabase with Row Level Security, all built around a shared tenancy.",
   },
   featured: true,
   order: 0,
@@ -47,7 +48,7 @@ const data: Project = {
       title: "Why it's different",
       body: [
         "Most existing tools are single-sided and finance-first — built for the landlord's bookkeeping, with the tenant as a payment record. The Landlord App makes the opposite bet: a two-sided, communication-first platform where landlord and tenant work together. It targets an underserved middle — landlords too big for spreadsheets, too small to justify an agent's fee or enterprise software — and it competes on focus, not feature count, obsessing over the handful of workflows landlords perform every week.",
-        "To be clear about scope: today's product isn't a replacement for a letting agent. It's the organisational backbone that makes self-management far easier — the foundation for a longer-term vision of “a property management company in your pocket”, reached deliberately over time.",
+        "To be clear about scope: today's product isn't a replacement for a letting agent. It's the organisational backbone that makes self-management far easier — the foundation for something larger, built deliberately over time (more on that below).",
       ],
     },
     {
@@ -193,18 +194,34 @@ const data: Project = {
     },
     {
       type: "prose",
-      title: "Where it is today — and what's next",
+      title: "Where it is today: MVP validation",
       body: [
-        "The core platform is largely built — the six workflows, secure onboarding, role-based access — on a production-quality architecture, but it isn't yet ready for daily use, and I won't pretend otherwise. My near-term focus is confidence, not features: expanding automated testing around the security boundaries and critical workflows, deploying a stable MVP, and getting it in front of real landlords for feedback. At this stage, feedback is worth more than functionality.",
-        "From there the roadmap is deliberately sequenced — deepening organisation first (automated compliance reminders, richer documents and maintenance, notifications and reporting), and only later taking on higher-complexity capabilities like payments and financial tooling. Every addition has to justify its complexity. I don't measure progress by feature count; I measure it by confidence, with each phase answering a specific question before the next begins.",
+        "The product is exactly where I planned for it to be: at the smallest version that can prove the idea, ready to be validated with real landlords before it grows any further. The core is in place — the six workflows, secure onboarding, and database-enforced access control — on a production-quality architecture. This is a deliberate MVP stage, not an unfinished one: the next milestone isn't more features, it's evidence.",
+        "So my current work is intentionally narrow — hardening the automated tests around the security boundaries and critical workflows, deploying a stable MVP, and putting it in front of real landlords to learn what genuinely helps them day to day. At this stage a single piece of honest feedback is worth more than another feature, because the job right now is to validate the idea, not to inflate it.",
+      ],
+    },
+    {
+      type: "prose",
+      title: "Where it's heading",
+      body: [
+        "Beyond validation, the roadmap is sequenced by intent rather than ambition. First, deepen the organisational core — automated compliance reminders so a certificate never lapses unnoticed, richer document and maintenance handling, notifications and reporting. Only later come the higher-complexity capabilities like rent collection and financial tooling, each earning its place by justifying the complexity it adds.",
+        "The long-term vision is a genuine “property management company in your pocket” — but I'm careful to hold that as a destination, reached one validated step at a time, not a claim about what exists today. Naming where something is going is easy; the discipline is being honest about how far along the road it actually is.",
+      ],
+    },
+    {
+      type: "prose",
+      title: "Why this is a turning point for me",
+      body: [
+        "For most of the last decade, my role has been to assure the quality of software that other teams designed and built — finding the risks, strengthening what shipped, and being the person who asks “but what happens if…”. This project is where that role changes shape. Here I own the entire lifecycle: the discovery, the product decisions, the architecture, the engineering, the quality strategy and the deployment, end to end.",
+        "That's the transition this represents — from safeguarding other people's products to being fully accountable for one of my own. And it has confirmed something I long suspected: the instincts I built in QA are at their most valuable when they shape a product from its very first decision, not when they're brought in to check it at the end.",
       ],
     },
     {
       type: "prose",
       title: "What this means if you're hiring me",
       body: [
-        "This is the first product I've taken from a real-world problem through discovery, architecture, engineering, quality and deployment, entirely on my own. For years I've helped teams ship better software through QA; this shows I apply that same rigour across the whole lifecycle — and that I can build products, not just contribute to them.",
-        "More than any single technology, it reflects how I approach engineering: understand the domain, model it honestly, make deliberate trade-offs, and build quality in rather than bolt it on. Because in the end, good software isn't about the cleverest code — it's about understanding people, solving problems that matter, and making decisions that stand the test of time.",
+        "If you're deciding whether to work with me, this project is the honest answer. It's how I'd approach your product too: start from the real problem your users have, model it faithfully, weigh every trade-off against your goals, and make the decisions today that keep the software cheap to own and safe to change for years.",
+        "And it reflects the one belief that runs through everything I build: progress isn't measured by how many features you've shipped, but by how much you can trust what you've built — and that trust is designed in from the very first decision, never bolted on at the end. That's the standard I've held this project to, and exactly the standard I'd hold yours to.",
       ],
     },
   ],

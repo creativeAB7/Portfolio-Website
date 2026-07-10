@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  Activity,
   ArrowLeft,
   Briefcase,
   CalendarDays,
@@ -38,6 +39,8 @@ export function CaseStudy({
   related: Project[];
 }) {
   const meta: MetaItem[] = [];
+  if (project.phase)
+    meta.push({ icon: Activity, label: "Status", value: project.phase });
   if (project.role)
     meta.push({ icon: Briefcase, label: "Role", value: project.role });
   if (project.timeframe)
