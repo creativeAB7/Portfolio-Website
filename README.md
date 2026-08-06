@@ -1,5 +1,8 @@
 # Akeem Baker — Portfolio & Consulting Site
 
+[![CI](https://github.com/creativeAB7/Portfolio-Website/actions/workflows/ci.yml/badge.svg)](https://github.com/creativeAB7/Portfolio-Website/actions/workflows/ci.yml)
+[![Live site](https://img.shields.io/badge/live-akeembaker.com-2563eb)](https://akeembaker.com)
+
 A personal, production-grade professional website for a QA automation & software
 engineer — built to attract freelance and consulting clients and to serve as a
 showcase of engineering standards: clean architecture, strict typing, a strong

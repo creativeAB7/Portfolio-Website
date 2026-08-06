@@ -4,8 +4,8 @@
  * through components) makes the site easy to rebrand and keeps SEO metadata
  * consistent.
  *
- * TODO(akeem): replace the placeholder tagline, email, and social handles
- * with your real details before going to production.
+ * Identity and social links are live. The only remaining placeholder is
+ * `links.booking` — unused while the primary CTA points at #contact.
  */
 export type NavItem = {
   label: string;
@@ -28,9 +28,10 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   locale: "en_GB",
   links: {
-    github: "https://github.com/your-handle", // TODO: real GitHub URL
-    linkedin: "https://www.linkedin.com/in/your-handle", // TODO: real LinkedIn URL
-    email: "hello@example.com", // TODO: real contact email
+    github: "https://github.com/creativeAB7",
+    linkedin: "https://www.linkedin.com/in/akeem-baker-10674b158/",
+    email: "hello@akeembaker.com",
+    /** Not yet live — the primary CTA points at #contact until this exists. */
     booking: "https://cal.com/your-handle", // TODO: real booking link (Cal.com / Calendly)
   },
 } as const;
