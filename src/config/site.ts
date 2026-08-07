@@ -15,9 +15,9 @@ export type NavItem = {
 export const siteConfig = {
   name: "Akeem Baker",
   /** Short role label used in headers and structured data. */
-  role: "QA Automation & Software Engineer",
+  role: "Quality Engineer",
   /** Default <title> and the base for the title template. */
-  title: "Akeem Baker — QA Automation & Software Engineer",
+  title: "Akeem Baker — Quality Engineer",
   /** Default meta description; keep under ~160 characters. */
   description:
     "Quality-focused software engineer specialising in test automation, software testing, and modern web development. Available for freelance and consulting work.",

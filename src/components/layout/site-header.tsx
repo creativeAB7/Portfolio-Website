@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
+import { Logo } from "@/components/layout/logo";
 import { MainNav } from "@/components/layout/main-nav";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -19,10 +20,13 @@ export function SiteHeader() {
         <div className="flex h-16 items-center justify-between gap-4">
           <Link
             href="/"
-            className="font-heading text-lg font-bold tracking-tight"
+            className="flex items-center gap-2.5"
             aria-label={`${siteConfig.name} — home`}
           >
-            {siteConfig.name}
+            <Logo className="h-7 w-auto text-brand" />
+            <span className="font-heading text-lg font-bold tracking-tight">
+              {siteConfig.name}
+            </span>
           </Link>
           <div className="flex items-center gap-1">
             <MainNav className="hidden md:flex" />
