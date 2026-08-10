@@ -126,6 +126,14 @@ export type TechnologiesContent = z.infer<typeof technologiesSchema>;
 export const processPhaseSchema = z.object({
   title: z.string().min(1),
   description: z.string().min(1),
+  /**
+   * The quality practice built into this phase. Required by design: the central
+   * claim of this site is that quality is engineered in from the first decision
+   * rather than inspected in at the end, so a phase with no quality dimension
+   * would contradict it. Making this mandatory means the build fails rather
+   * than letting a "quality-free" step ship.
+   */
+  quality: z.string().min(1),
 });
 export const processSchema = z.object({
   ...sectionMetaShape,
