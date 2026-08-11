@@ -5,27 +5,28 @@ const data: Hero = {
   headline: "Software that works.",
   headlineAccent: "And the tests to prove it.",
   subheadline:
-    "I'm Akeem Baker — a QA-led software engineer. I design, build, and rigorously test web applications, so you can ship faster, break less, and release with confidence.",
-  panelLabel: "quality-first delivery",
-  // Qualitative today; add `value`/`description` to make these concrete business
-  // outcomes as real metrics become available (e.g. value: "70%").
+    "I'm Akeem Baker — a Quality Engineer. A decade of finding how software breaks now shapes how I design, build and ship it: deliberate architecture, sharper trade-offs, and far fewer expensive surprises.",
+  panelLabel: "how i engineer",
+  // Spread deliberately across experience, judgement, evidence and capability —
+  // so the panel reads as an engineer with a quality lens, not only a tester.
+  // Add `value`/`description` to any of these as real metrics become available.
   proofPoints: [
     {
       icon: "experience",
       value: "10+ years",
-      label: "in QA & test automation",
+      label: "across testing, automation & delivery",
+    },
+    {
+      icon: "architecture",
+      label: "Architecture chosen for what it costs to change later",
     },
     {
       icon: "testing",
-      label: "Testing-first delivery, integrated into CI",
-    },
-    {
-      icon: "quality",
-      label: "Accessible, performant & SEO-ready",
+      label: "Proven continuously — tests, types & accessibility in CI",
     },
     {
       icon: "stack",
-      label: "Full-stack: Next.js, React & TypeScript",
+      label: "Full-stack delivery: Next.js, React & TypeScript",
     },
   ],
 };

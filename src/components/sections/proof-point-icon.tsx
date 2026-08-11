@@ -3,6 +3,7 @@ import {
   Code,
   FlaskConical,
   Gauge,
+  Layers,
   Rocket,
   ShieldCheck,
   TrendingUp,
@@ -17,6 +18,7 @@ import type { HeroProofIcon } from "@/content";
  */
 const registry: Record<HeroProofIcon, LucideIcon> = {
   experience: ShieldCheck,
+  architecture: Layers,
   testing: FlaskConical,
   quality: Accessibility,
   performance: Gauge,

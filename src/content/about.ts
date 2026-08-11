@@ -2,17 +2,17 @@ import { aboutSchema, type About } from "./schema";
 
 const data: About = {
   eyebrow: "About",
-  title: "Most engineers can build it. I make sure it works.",
-  lead: "I'm Akeem Baker — a software engineer with a decade in QA and test automation. That background is exactly why I'm a lower-risk choice to build your software.",
+  title: "Knowing how software breaks changes how you build it.",
+  lead: "I'm Akeem Baker — a Quality Engineer. A decade spent finding where systems fail now shapes the architecture I choose, the trade-offs I make, and the software I hand over.",
   paragraphs: [
-    "After ten years leading quality across functional, regression, and UAT testing — and building automation in Playwright, Selenium, and TestComplete — I understand how software breaks. That's what makes the way I build it different.",
-    "Today I combine that testing depth with full-stack development in TypeScript, React, and Next.js. You get one person who can design, build, and prove a feature end to end — fewer handoffs, fewer surprises, and delivery you can rely on.",
-    "Whether I'm writing tests or shipping product, the goal is the same: reduce the risk in your project and give you confidence it's been done properly.",
+    "Across functional, regression and UAT testing — and automation built in Playwright, Selenium and TestComplete — I watched the same failures repeat: unclear boundaries, hidden coupling, and decisions made by default rather than on purpose. Those patterns are what I now design against, long before anything is written.",
+    "Today I pair that with full-stack development in TypeScript, React and Next.js. You get one person who can shape the architecture, build the feature and prove it works — fewer handoffs, and fewer gaps between what was intended and what gets delivered.",
+    "The goal never changes: reduce what can go wrong, and leave you with software that stays cheap to change and safe to build on long after handover.",
   ],
   highlights: [
-    { value: "10+ yrs", label: "in software quality" },
-    { value: "Build + prove", label: "features that actually work" },
-    { value: "Lower risk", label: "delivery you can trust" },
+    { value: "10+ yrs", label: "across testing & delivery" },
+    { value: "Build + prove", label: "features that work, with evidence" },
+    { value: "Designed to last", label: "software that stays cheap to change" },
   ],
 };
 

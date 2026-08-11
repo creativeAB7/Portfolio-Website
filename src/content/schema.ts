@@ -44,6 +44,7 @@ export type About = z.infer<typeof aboutSchema>;
 /** Semantic icon keys for hero proof points; mapped to components in the UI. */
 export const heroProofIconKeys = [
   "experience",
+  "architecture",
   "testing",
   "quality",
   "performance",
