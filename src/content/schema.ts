@@ -84,6 +84,7 @@ export type Hero = z.infer<typeof heroSchema>;
 
 /** Semantic icon keys; the UI maps these to concrete icon components. */
 export const serviceIconKeys = [
+  "architecture",
   "test-automation",
   "qa-strategy",
   "software-testing",

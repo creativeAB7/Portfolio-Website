@@ -5,7 +5,7 @@ const data: Hero = {
   headline: "Software that works.",
   headlineAccent: "And the tests to prove it.",
   subheadline:
-    "I'm Akeem Baker — a Quality Engineer. A decade of finding how software breaks now shapes how I design, build and ship it: deliberate architecture, sharper trade-offs, and far fewer expensive surprises.",
+    "I'm Akeem Baker — a Quality Engineer. A decade of understanding how systems fail now shapes how I design, build and ship them: deliberate architecture, sharper trade-offs, and far fewer expensive surprises.",
   panelLabel: "how i engineer",
   // Spread deliberately across experience, judgement, evidence and capability —
   // so the panel reads as an engineer with a quality lens, not only a tester.

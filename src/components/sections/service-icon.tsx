@@ -1,4 +1,5 @@
 import {
+  Blocks,
   Bot,
   Bug,
   Code,
@@ -15,6 +16,7 @@ import type { ServiceIconKey } from "@/content";
  * serializable (no React components stored in content).
  */
 const registry: Record<ServiceIconKey, LucideIcon> = {
+  architecture: Blocks,
   "test-automation": Bot,
   "qa-strategy": ShieldCheck,
   "software-testing": Bug,
