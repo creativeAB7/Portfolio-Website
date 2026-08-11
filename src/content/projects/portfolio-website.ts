@@ -2,9 +2,9 @@ import { projectSchema, type Project } from "../schema";
 
 const data: Project = {
   slug: "portfolio-website",
-  title: "This Website: A Content-Driven Consulting Platform",
+  title: "This Website: Built to the Standard I'd Apply to Yours",
   summary:
-    "I built my own site the way I'd build a client's product — content-driven, fully tested, accessible, and fast. Here's how I approached it, the decisions I made, and what that means for your project.",
+    "A consulting site is easy to fill with claims about engineering standards. I built mine so the claims are checkable — the architecture, the trade-offs, and the automated gates every change has to pass before it ships.",
   category: "personal",
   role: "Product design, full-stack engineering & QA",
   timeframe: "2026",
@@ -18,7 +18,7 @@ const data: Project = {
   ],
   cover: {
     src: "/projects/portfolio-website/home-light.png",
-    alt: "The homepage hero of this website",
+    alt: "The homepage of this website: the hero headline alongside a credibility panel listing experience, architecture, continuous testing and full-stack delivery.",
   },
   featured: true,
   order: 1,
@@ -36,7 +36,27 @@ const data: Project = {
       title: "Overview",
       body: [
         "This website is my portfolio — but I treated it as a real product with a real goal: help potential clients quickly decide whether I'm the right person to build their software. That meant it couldn't just claim I deliver high-quality work; it had to demonstrate it.",
-        "So I designed and built it end to end as a production-grade application: content-driven, rigorously tested, accessible, fast, and easy to maintain. This case study walks through how I approached it and, more importantly, why — because the same thinking is what I'd bring to your project.",
+        "So I designed and built it end to end as a production-grade application: content-driven, rigorously tested, accessible, fast, and easy to maintain. This case study walks through how I approached it and, more importantly, why — and because the source is public, none of it has to be taken on trust.",
+      ],
+    },
+    {
+      type: "metrics",
+      title: "The evidence",
+      items: [
+        {
+          value: "0",
+          label:
+            "accessibility violations, verified automatically on every build",
+        },
+        {
+          value: "100%",
+          label:
+            "of pages statically rendered — no server to secure or slow down",
+        },
+        {
+          value: "6",
+          label: "automated gates every change has to pass before it ships",
+        },
       ],
     },
     {
@@ -95,6 +115,14 @@ const data: Project = {
       ],
     },
     {
+      type: "prose",
+      title: "Every change has to earn its way in",
+      body: [
+        "Six automated gates stand between a change and production: formatting, linting, type-checking, unit tests, a production build, and end-to-end tests in a real browser — including an accessibility audit that has to report zero issues. Nothing ships unless every one of them passes.",
+        "This is the same discipline I bring to client work: catch problems early, keep the codebase healthy, and make it safe to move quickly without breaking what already works.",
+      ],
+    },
+    {
       type: "techStack",
       title: "How it's built",
       groups: [
@@ -133,30 +161,6 @@ const data: Project = {
           alt: "The website's homepage in dark mode",
           caption:
             "The same site in dark mode — theming built in from the start.",
-        },
-      ],
-    },
-    {
-      type: "prose",
-      title: "How I approached quality",
-      body: [
-        "Quality is where my background shows. Every change runs through automated formatting, linting, type-checking, unit tests, a production build, and end-to-end tests in a real browser — including an accessibility audit that must report zero issues. Nothing ships unless all of it passes.",
-        "This is the same discipline I bring to client work: catch problems early, keep the codebase healthy, and make it safe to move fast without breaking things.",
-      ],
-    },
-    {
-      type: "metrics",
-      title: "The results",
-      items: [
-        {
-          value: "0",
-          label:
-            "accessibility violations, checked automatically on every build",
-        },
-        { value: "100%", label: "of pages statically rendered for speed" },
-        {
-          value: "6",
-          label: "automated quality gates before anything ships",
         },
       ],
     },
