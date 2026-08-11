@@ -3,6 +3,7 @@ import { projectSchema, type Project } from "../schema";
 const data: Project = {
   slug: "landlord-app",
   title: "The Landlord App: Property Management, Built Quality-First",
+  shortTitle: "The Landlord App",
   summary:
     "A two-sided property management platform for self-managing UK landlords and their tenants — and a look at how I design a product for reliability, security and long-term growth from day one.",
   category: "personal",

@@ -3,6 +3,7 @@ import { projectSchema, type Project } from "../schema";
 const data: Project = {
   slug: "portfolio-website",
   title: "This Website: Built to the Standard I'd Apply to Yours",
+  shortTitle: "This Website",
   summary:
     "A consulting site is easy to fill with claims about engineering standards. I built mine so the claims are checkable — the architecture, the trade-offs, and the automated gates every change has to pass before it ships.",
   category: "personal",

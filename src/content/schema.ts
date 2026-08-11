@@ -300,6 +300,12 @@ const projectSlug = z
 export const projectSchema = z.object({
   slug: projectSlug,
   title: z.string().min(1),
+  /**
+   * Compact label for tight contexts (footer links, breadcrumbs). Case-study
+   * titles are written to persuade and are often too long to sit in a nav
+   * column; falls back to `title` where it isn't set.
+   */
+  shortTitle: z.string().min(1).optional(),
   /** One-line summary used on cards and as the meta description. */
   summary: z.string().min(1),
   category: z.enum(projectCategories),

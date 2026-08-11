@@ -38,11 +38,16 @@ export const siteConfig = {
 
 export type SiteConfig = typeof siteConfig;
 
-/** Primary in-page navigation (anchors to homepage sections). */
+/**
+ * Primary navigation. Hrefs are root-relative (`/#about`, not `#about`) so the
+ * links work from every page — a bare anchor on `/projects/[slug]` points at a
+ * section that doesn't exist there and silently does nothing. On the homepage
+ * these still scroll rather than reload.
+ */
 export const mainNav: NavItem[] = [
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#projects" },
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Work", href: "/#projects" },
+  { label: "Services", href: "/#services" },
+  { label: "Process", href: "/#process" },
+  { label: "Contact", href: "/#contact" },
 ];
