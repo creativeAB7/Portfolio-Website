@@ -18,7 +18,7 @@ export function Services() {
       title={services.title}
       description={services.description}
     >
-      <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {services.items.map((service) => (
           <li key={service.title}>
             <Card className="h-full transition duration-200 hover:-translate-y-0.5 hover:ring-foreground/20">
@@ -28,7 +28,7 @@ export function Services() {
                 </span>
                 <CardTitle className="text-lg">{service.title}</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3 text-sm">
+              <CardContent className="space-y-2.5 text-sm">
                 <p className="text-muted-foreground">{service.problem}</p>
                 <p className="leading-relaxed">{service.solution}</p>
                 <p className="flex items-start gap-2 font-medium text-brand">
