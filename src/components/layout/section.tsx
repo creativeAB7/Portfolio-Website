@@ -41,7 +41,7 @@ export function Section({
   const content = (
     <>
       {hasHeader && (
-        <header className="mx-auto mb-12 max-w-2xl text-center">
+        <header className="mx-auto mb-10 max-w-2xl text-center">
           {eyebrow && (
             <p className="mb-3 text-sm font-semibold tracking-wider text-brand uppercase">
               {eyebrow}
@@ -66,7 +66,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn("scroll-mt-20 py-20 sm:py-28", className)}
+      className={cn("scroll-mt-20 py-16 sm:py-20", className)}
       {...props}
     >
       {bleed ? content : <Container>{content}</Container>}
