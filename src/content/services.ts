@@ -1,10 +1,16 @@
 import { servicesSchema, type ServicesContent } from "./schema";
 
 /**
- * Services are framed as engagement shapes — the things a reader could
- * reasonably want after finishing the case studies — rather than as a list of
- * skills. They run in lifecycle order (design → build → prove → raise the bar),
- * mirroring the phases in "How I work".
+ * Services are framed as engagement shapes — what someone can actually hire me
+ * for — rather than as a list of skills, and ordered by the work I want:
+ * testing, AI-assisted development, then web development.
+ *
+ * Architecture is deliberately NOT sold as a standalone engagement. It still
+ * shapes the work (see Application Development, and the case studies), but
+ * listing an offer I don't want to be booked for would attract the wrong
+ * enquiries. The two testing services are split across the order so the three
+ * priorities come first — on mobile the cards stack in sequence, so order is
+ * the only signal of emphasis.
  *
  * Copy is kept tight: `problem` earns its place only where it says something
  * the buyer doesn't already know, and `solution` states what I do without
@@ -12,30 +18,10 @@ import { servicesSchema, type ServicesContent } from "./schema";
  */
 const data: ServicesContent = {
   eyebrow: "Services",
-  title: "Bring me in to design it, build it, or prove it works.",
+  title: "Bring me in to build it, or to prove it works.",
   description:
-    "Engagements across the software lifecycle — from the architecture decisions that are expensive to reverse, through delivery, to the testing that shows it holds up.",
+    "Testing, AI-assisted development and full-stack delivery — with quality engineered in from the first decision rather than inspected at the end.",
   items: [
-    {
-      icon: "architecture",
-      title: "Architecture & Technical Design",
-      problem:
-        "The decisions made before any code exists — how data is modelled, where boundaries sit, who can see what — are the most expensive ones to undo.",
-      solution:
-        "I model your domain, define the boundaries, and design the data and security architecture up front, with every significant trade-off written down.",
-      outcome:
-        "A system that can grow without being rebuilt, and a team that understands why it's shaped the way it is.",
-    },
-    {
-      icon: "web-development",
-      title: "Application Development",
-      problem:
-        "You need a product built properly — not a prototype you'll pay to replace within a year.",
-      solution:
-        "I design, build and ship web applications end to end in TypeScript, React and Next.js, with tests written alongside the code.",
-      outcome:
-        "Software that works on launch day and stays cheap to change long afterwards.",
-    },
     {
       icon: "test-automation",
       title: "Test Automation",
@@ -45,6 +31,26 @@ const data: ServicesContent = {
         "I build maintainable automated suites — unit, integration and end-to-end — wired into your pipeline so every change is checked before it ships.",
       outcome:
         "Faster, safer releases, and confidence that new work hasn't broken what already worked.",
+    },
+    {
+      icon: "ai-assisted",
+      title: "AI-Assisted Development",
+      problem:
+        "AI can accelerate delivery dramatically — or quietly fill a codebase with insecure, unmaintainable code nobody understands.",
+      solution:
+        "I build with AI as a deliberate part of the workflow, using it to move faster while holding the same standards for structure, review, security and test coverage.",
+      outcome:
+        "The speed advantage, without inheriting a codebase you can't maintain.",
+    },
+    {
+      icon: "web-development",
+      title: "Application Development",
+      problem:
+        "You need a product built properly — not a prototype you'll pay to replace within a year.",
+      solution:
+        "I design, build and ship web applications end to end in TypeScript, React and Next.js — modelling the data and boundaries up front, then writing tests alongside the code.",
+      outcome:
+        "Software that works on launch day and stays cheap to change long afterwards.",
     },
     {
       icon: "software-testing",
@@ -65,16 +71,6 @@ const data: ServicesContent = {
         "I review how you build and test today, then shape a pragmatic risk-based strategy your team can actually sustain.",
       outcome:
         "Release decisions grounded in evidence, and a team that holds the line after I've gone.",
-    },
-    {
-      icon: "ai-assisted",
-      title: "AI-Assisted Delivery",
-      problem:
-        "AI tooling promises speed, but used without judgement it quietly ships insecure code somebody still has to own.",
-      solution:
-        "I bring AI into the workflow deliberately — accelerating the work while keeping architecture, review and security standards intact.",
-      outcome:
-        "The speed advantage, without inheriting a codebase nobody understands.",
     },
   ],
 };
