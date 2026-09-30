@@ -20,8 +20,8 @@ const data: Project = {
     "Testing",
   ],
   cover: {
-    src: "/projects/landlord-app/architecture.png",
-    alt: "Architecture of the Landlord App: a two-sided platform where landlords and tenants each get their own experience but share one system, backed by Supabase with Row Level Security, all built around a shared tenancy.",
+    src: "/projects/landlord-app/dashboard.png",
+    alt: "The Landlord App dashboard: an expiring-certificate alert at the top, summary tiles for properties, tenants and rent, then lists of properties, open maintenance and rent needing attention.",
   },
   featured: true,
   order: 0,
@@ -84,6 +84,24 @@ const data: Project = {
           title: "Communication",
           description:
             "Messaging tied to the tenancy, so conversations stay in context with a permanent history — not scattered across apps.",
+        },
+      ],
+    },
+    {
+      type: "gallery",
+      title: "A look at the product",
+      items: [
+        {
+          src: "/projects/landlord-app/sign-in.png",
+          alt: "The Landlord App sign-in screen, with a note stating that tenants sign up via an invitation link from their landlord.",
+          caption:
+            "Sign-in is landlord-only by design. Tenants can't self-register — they join through an invitation tied to a specific tenancy, which is what keeps the permission boundaries intact.",
+        },
+        {
+          src: "/projects/landlord-app/architecture.png",
+          alt: "Architecture of the Landlord App: a two-sided platform where landlords and tenants each get their own experience but share one system, backed by Supabase with Row Level Security, all built around a shared tenancy.",
+          caption:
+            "Two roles, one shared system — with access enforced in the database rather than the interface.",
         },
       ],
     },
