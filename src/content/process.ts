@@ -50,7 +50,7 @@ const data: ProcessContent = {
     {
       title: "Support & evolve",
       description:
-        "Maintenance, improvements and ongoing support as your needs change.",
+        "Maintenance, improvements and ongoing support — one-off or on a retainer, as your needs change.",
       quality:
         "The test suite evolves with the product, so changes stay safe long after launch.",
     },

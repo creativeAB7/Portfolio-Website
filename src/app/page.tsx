@@ -1,7 +1,6 @@
 import { About } from "@/components/sections/about";
 import { Certifications } from "@/components/sections/certifications";
 import { Contact } from "@/components/sections/contact";
-import { Faq } from "@/components/sections/faq";
 import { Hero } from "@/components/sections/hero";
 import { HowIWork } from "@/components/sections/how-i-work";
 import { Projects } from "@/components/sections/projects";
@@ -10,7 +9,7 @@ import { Testimonials } from "@/components/sections/testimonials";
 
 /**
  * Homepage flow is proof-first:
- * Hero → Work (proof) → Testimonials → About → Services → How I Work → FAQ →
+ * Hero → Work (proof) → Testimonials → About → Services → How I Work →
  * Contact.
  *
  * Work sits directly under the hero deliberately. Most visitors arrive from a
@@ -31,7 +30,6 @@ export default function HomePage() {
       <Services />
       <HowIWork />
       <Certifications />
-      <Faq />
       <Contact />
     </>
   );

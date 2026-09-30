@@ -10,6 +10,7 @@ const data: About = {
   paragraphs: [
     "Across functional, regression and UAT testing — and automation built in Playwright, Selenium and TestComplete — I watched the same failures repeat: unclear boundaries, hidden coupling, and decisions made by default rather than on purpose. Those are the patterns I now design against, before anything is written.",
     "Today I pair that with full-stack development in TypeScript, React and Next.js — one person who can shape the architecture, build the feature and prove it works. Fewer handoffs, fewer gaps between what was intended and what ships, and software that stays cheap to change long after handover.",
+    "Most of that work starts inside something that already exists. I'm comfortable joining an established codebase, CI pipeline and Agile team, and I follow your conventions rather than importing my own.",
   ],
   highlights: [
     { value: "10+ yrs", label: "across testing & delivery" },

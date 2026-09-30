@@ -3,7 +3,6 @@ import { describe, expect, test } from "vitest";
 import {
   about,
   certifications,
-  faq,
   projects,
   projectsSection,
   services,
@@ -43,10 +42,6 @@ describe("content", () => {
     expect(workProcess.phases.length).toBeGreaterThan(0);
   });
 
-  test("faq has question/answer pairs", () => {
-    expect(faq.items.length).toBeGreaterThan(0);
-  });
-
   test("projects is a validated collection", () => {
     expect(Array.isArray(projects)).toBe(true);
   });
@@ -59,7 +54,6 @@ describe("content", () => {
       projectsSection,
       certifications,
       testimonials,
-      faq,
     ];
     for (const section of sections) {
       expect(section.eyebrow.length).toBeGreaterThan(0);

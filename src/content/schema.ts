@@ -379,21 +379,6 @@ export const testimonialsSchema = z.object({
 export type TestimonialItem = z.infer<typeof testimonialItemSchema>;
 export type TestimonialsContent = z.infer<typeof testimonialsSchema>;
 
-/* -------------------------------------------------------------------- FAQ - */
-
-export const faqItemSchema = z.object({
-  question: z.string().min(1),
-  answer: z.string().min(1),
-  /** Optional grouping label for future categorised FAQs. */
-  category: z.string().min(1).optional(),
-});
-export const faqSchema = z.object({
-  ...sectionMetaShape,
-  items: z.array(faqItemSchema).min(1),
-});
-export type FaqItem = z.infer<typeof faqItemSchema>;
-export type FaqContent = z.infer<typeof faqSchema>;
-
 /* ---------------------------------------------------------------- Contact - */
 
 export const contactSchema = z.object({
@@ -401,6 +386,5 @@ export const contactSchema = z.object({
   /** Short availability / preferred-contact line. */
   availability: z.string().min(1),
   /** Expected response-time copy. */
-  responseTime: z.string().min(1),
 });
 export type ContactContent = z.infer<typeof contactSchema>;

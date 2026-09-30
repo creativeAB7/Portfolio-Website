@@ -97,9 +97,6 @@ export function SiteFooter() {
             >
               {siteConfig.links.email}
             </a>
-            <p className="mt-2 text-sm text-muted-foreground">
-              {contact.responseTime}
-            </p>
             <nav aria-label="Social links" className="-ml-2 flex items-center">
               {socials.map(({ label, href, icon: Icon }) => {
                 const isExternal = href.startsWith("http");

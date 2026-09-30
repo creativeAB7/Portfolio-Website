@@ -53,10 +53,7 @@ export function Contact() {
             {contact.description}
           </p>
 
-          <div className="mt-6 space-y-1 text-sm">
-            <p className="font-medium">{contact.availability}</p>
-            <p className="text-muted-foreground">{contact.responseTime}</p>
-          </div>
+          <p className="mt-6 text-sm font-medium">{contact.availability}</p>
 
           <ul className="mt-8 space-y-3">
             {methods.map((method) => {

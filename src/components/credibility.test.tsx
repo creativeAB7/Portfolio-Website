@@ -3,7 +3,6 @@ import { describe, expect, test } from "vitest";
 
 import { certificationItemSchema, testimonialItemSchema } from "@/content";
 import { CertificationCard } from "@/components/certifications/certification-card";
-import { Faq } from "@/components/sections/faq";
 import { TestimonialCard } from "@/components/testimonials/testimonial-card";
 import { exampleCertification } from "@/test/fixtures/example-certification";
 import { exampleTestimonial } from "@/test/fixtures/example-testimonial";
@@ -47,16 +46,6 @@ describe("credibility layer", () => {
     expect(screen.getByText("Test Design")).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /view credential/i }),
-    ).toBeInTheDocument();
-  });
-
-  test("FAQ renders client-oriented questions as accordion triggers", () => {
-    render(<Faq />);
-    expect(
-      screen.getByRole("button", { name: /what services do you offer/i }),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: /do you write automated tests/i }),
     ).toBeInTheDocument();
   });
 });
